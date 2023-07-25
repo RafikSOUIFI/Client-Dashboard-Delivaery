@@ -150,9 +150,9 @@ const ShowPackage = ({ hideCards, setSuccess }) => {
                   <TableCell>{colis.adresse} </TableCell>
                   <TableCell>{colis.prix} dt</TableCell>
                   <TableCell>{colis.date_d_ajout.split("T")[0]}</TableCell>
-                  <TableCell>{colis.date_d_enlevement.split("T")[0]}</TableCell>
-                  {(hideCards === "Livrés" || hideCards === "Livrés payés") && <TableCell>{colis.date_de_livraison.split("T")[0]}</TableCell>}
-                  {(hideCards === "R définitif" || hideCards === "R expéditeur") && <TableCell>{colis.date_de_retour.split("T")[0]}</TableCell>}
+                  <TableCell>{colis.date_d_enlevement ? colis.date_d_enlevement.split("T")[0] : "-"}</TableCell>
+                  {(hideCards === "Livrés" || hideCards === "Livrés payés") && <TableCell>{colis.date_de_livraison ? colis.date_de_livraison.split("T")[0] : "-"}</TableCell>}
+                  {(hideCards === "R définitif" || hideCards === "R expéditeur") && <TableCell>{colis.date_de_retour ? colis.date_de_retour.split("T")[0] : "-"}</TableCell>}
                   <TableCell>{colis.designation}</TableCell>
                 </TableRow>
               ))}
